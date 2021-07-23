@@ -13,12 +13,12 @@ import { ExperienceCard } from './experience-card/types';
           [content]="experience.content"
         ></experience-card>
       </div>
-    </div>
-    <div class="d-flex justify-content-between w-100">
-      <a [routerLink]="['/about']" class="btn btn-info mt-5"> &larr; About </a>
-      <a [routerLink]="['/featured-projects']" class="btn btn-info mt-5">
-        Projects &rarr;
-      </a>
+      <div class="col-lg-12 d-flex justify-content-between w-100 mb-5">
+        <a [routerLink]="['/about']" class="btn btn-info"> &larr; About </a>
+        <a [routerLink]="['/featured-projects']" class="btn btn-info">
+          Projects &rarr;
+        </a>
+      </div>
     </div>
   `,
 })
@@ -29,6 +29,7 @@ export class ResumeComponent {
       label: 'Full Stack ReactJS - Laravel Developer',
       dateRange: 'Sep 2019 - Jul 2021',
       content: `
+        <h5 class="mb-4">Decameron's Hotels</h5>
         <p>
           Development of a multi-tenant app to manage all Decameron’s Hotels
           and provide remote assistance to Decameron’s hosts, offering
@@ -64,6 +65,7 @@ export class ResumeComponent {
       label: 'Full Stack Angular - Laravel Developer',
       dateRange: 'Sep 2018 - Sep 2019',
       content: `
+      <h5 class="mb-4">Bendita Essence</h5>
         <p>
           Development of an intranet in Angular 7 and Laravel 5.6 with a mobile app using Ionic 4 for a 
           rating system of Abbott’s colombian sales points.

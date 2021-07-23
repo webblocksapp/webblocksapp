@@ -28,7 +28,7 @@ type Skills = {
         </i>
       </p>
     </div>
-    <div class="text-justify mt-5">
+    <div class="text-justify mt-5 w-100">
       <h3 class="mb-4">Personal Information</h3>
       <div class="row">
         <div
@@ -76,12 +76,12 @@ type Skills = {
           </div>
         </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-between w-100">
-      <a [routerLink]="['/home']" class="btn btn-info mt-5"> &larr; Home </a>
-      <a [routerLink]="['/resume']" class="btn btn-info mt-5">
-        Experience &rarr;
-      </a>
+      <div class="d-flex justify-content-between w-100">
+        <a [routerLink]="['/home']" class="btn btn-info mt-5"> &larr; Home </a>
+        <a [routerLink]="['/resume']" class="btn btn-info mt-5">
+          Experience &rarr;
+        </a>
+      </div>
     </div>
   `,
 })
@@ -105,12 +105,6 @@ export class AboutComponent {
       `,
     },
     { label: 'Birth date:', description: this.birthDate },
-    { label: 'Email:', description: 'mauriver21@gmail.com' },
-    {
-      label: 'Phone:',
-      description:
-        '<img class="mb-1 ml-1" src="/assets/icons/whatsapp.svg" width="24" height="24" /> +57 312 431 6446',
-    },
   ];
 
   public skills: Skills[] = [
