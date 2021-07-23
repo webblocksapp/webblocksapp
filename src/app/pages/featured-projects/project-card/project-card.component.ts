@@ -7,9 +7,11 @@ import { Component, HostBinding, Input } from '@angular/core';
       <div
         class="card-header py-3 d-flex justify-content-between w-100 align-items-center"
       >
-        <h6 *ngIf="header" class="m-0 font-weight-bold text-primary">
-          {{ header }}
-        </h6>
+        <h6
+          *ngIf="header"
+          class="m-0 font-weight-bold text-primary"
+          [innerHTML]="header"
+        ></h6>
         <img
           *ngIf="svg"
           class="icon-logo"

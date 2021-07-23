@@ -5,7 +5,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   template: `
     <app-header></app-header>
     <app-main>
-      <router-outlet></router-outlet>
+      <app-container>
+        <router-outlet></router-outlet>
+      </app-container>
     </app-main>
   `,
   styles: [

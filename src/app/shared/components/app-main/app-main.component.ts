@@ -12,6 +12,6 @@ import { Component, HostBinding } from '@angular/core';
   ],
 })
 export class AppMainComponent {
-  @HostBinding('class') class: string =
+  @HostBinding() class: string =
     'p-3 d-flex justify-content-center w-100 overflow-auto';
 }

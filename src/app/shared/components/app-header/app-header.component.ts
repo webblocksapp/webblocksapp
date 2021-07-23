@@ -2,7 +2,7 @@ import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  template: `Webblocksapp`,
+  template: ` <app-header-navbar></app-header-navbar> `,
   styles: [
     `
       :host {
@@ -12,5 +12,6 @@ import { Component, HostBinding } from '@angular/core';
   ],
 })
 export class AppHeaderComponent {
-  @HostBinding('class') class: string = 'bg-gray-700 text-gray-100 p-3';
+  @HostBinding('class') class: string =
+    'bg-gray-700 text-gray-100 d-flex align-items-center px-3 w-100 py-1';
 }

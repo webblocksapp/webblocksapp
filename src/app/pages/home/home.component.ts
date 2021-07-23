@@ -1,59 +1,64 @@
-import { Component } from '@angular/core';
-import { ProjectCard } from './project-card/types';
+import { Component, HostBinding } from '@angular/core';
+import { calcYears } from '@shared/utils/functions';
+import { YEAR_STARTED_TO_DEVELOP } from '@shared/utils/constants';
 
 @Component({
   selector: 'home',
   template: `
-    <h2 class="text-center main-title p-4">
-      Providing great libraries for Web UI Javascript Development
-    </h2>
-
-    <section class="mt-4">
-      <h5>Featured Projects</h5>
-      <div class="row mt-4">
-        <div
-          *ngFor="let featuredProject of featuredProjects"
-          class="col-md-4 col-sm-6 col-xs-12"
-        >
-          <project-card
-            [header]="featuredProject.header"
-            [svg]="featuredProject.svg"
-            [body]="featuredProject.body"
-            [link]="featuredProject.link"
-          ></project-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 w-100 mt-3">
-          <card style="min-height: 160px; max-width: 900px; margin: auto;">
-            <google-ad></google-ad>
-          </card>
-        </div>
-      </div>
-    </section>
+    <avatar
+      imageUrl="assets/images/avatar/MR.jpeg"
+      alt="Mauricio Rivera"
+      width="200px"
+      height="200px"
+    ></avatar>
+    <div class="my-3">
+      <h2>Mauricio Rivera</h2>
+      <h5>Webblocksapp Maintainer</h5>
+    </div>
+    <p>
+      Software Engineer with {{ yearsDeveloping }}+ years of experience
+      developing web applications using Typescript, PHP, Angular, ReactJS and
+      Laravel. Involved on building high scalable frontend components and
+      backend APIs standardization to speed up programming. Very interested in
+      working under organized software development methodologies, also in
+      contributing to find clean and elegant solutions to facilitate and
+      expedite the maintainability and developing of world class software. In
+      love with Angular 8+ on Frontend and Laravel 5.6 and NestJS on Backend.
+    </p>
+    <div
+      class="
+          mt-3 
+          d-flex 
+          align-items-center 
+          flex-wrap 
+          space-between 
+          justify-content-center
+        "
+    >
+      <p class="mb-0"><strong>Skills:</strong></p>
+      <chip *ngFor="let skill of skills">{{ skill }}</chip>
+    </div>
+    <a [routerLink]="['/about']" class="btn btn-info mt-5"> About me &rarr;</a>
   `,
-  styles: [
-    `
-      .main-title {
-        width: 100%;
-        max-width: 520px;
-        margin: auto;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class HomeComponent {
-  public featuredProjects: ProjectCard[] = [
-    {
-      header: 'NG Data Groups',
-      svg: 'angular',
-      body: `
-        NG Data Groups is an small Angular framework designed to make
-        easier form building and validations. But not only that, you can
-        create complex data structures and convert them into UI data
-        inputs easily with validations.
-      `,
-      link: 'https://ngdatagroups.webblocksapp.com',
-    },
+  @HostBinding() class: string =
+    'd-flex flex-column align-items-center justify-content-center h-100 text-center';
+
+  public skills: string[] = [
+    'Angular 8+',
+    'Laravel 5.6+',
+    'Yii2',
+    'Ionic 4+',
+    'ReactJS',
+    'ReactJs + Typescript',
+    'NestJS',
+    'AdonisJS',
+    'Bootstrap 4+',
+    'Angular Material',
+    'React Material',
   ];
+
+  public yearsDeveloping: number = calcYears(YEAR_STARTED_TO_DEVELOP);
 }
